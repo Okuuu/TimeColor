@@ -3,14 +3,18 @@
     <head>
         <title>Time Color</title>
         <meta charset="UTF-8">
-        <link type="text/css" href="assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     </head>
 
     <body onload="startTime()" id="test">
-        <div id="time">
-            <span id="hours">:</span>
-            <span id="minutes" >:</span>
-            <span id="seconds"></span>
+        <div class="container">
+            <div id="time">
+                <span id="hours"></span> :
+                <span id="minutes" ></span> :
+                <span id="seconds"></span>
+            </div>
+            <!--TODO: Uncomment the following line to allow the function who copy to work-->
+            <!--<button id="copy" onclick="copy()">Copy the color to your clipboard</button>-->
         </div>
     </body>
 </html>
