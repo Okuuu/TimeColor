@@ -9,6 +9,7 @@
     margin-top: 20%;
     color: white;
     position: center;
+    margin-bottom: 20px;
 }
 
 .container{
@@ -21,4 +22,24 @@
     position: relative;
     color:white;
     cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+
+#info:hover{
+    color: black;
+}
+
+#copy{
+    cursor: pointer;
+    padding: 10px;
+    display: inline;
+    color:white;
+    border: 2px solid white;
+    transition: all 0.2s ease-out;
+}
+
+#copy:hover{
+
+    color: black;
+    border: 2px solid black;
 }
