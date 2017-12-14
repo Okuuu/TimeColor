@@ -20,26 +20,25 @@
     top: 10px;
     right: -95%;
     position: relative;
-    color:white;
+    color:gray;
     cursor: pointer;
     transition: all 0.2s ease-out;
 }
 
 #info:hover{
-    color: black;
+    color: white;
 }
 
 #copy{
     cursor: pointer;
     padding: 10px;
     display: inline;
-    color:white;
-    border: 2px solid white;
+    color:gray;
+    border: 2px solid gray;
     transition: all 0.2s ease-out;
 }
 
 #copy:hover{
-
-    color: black;
-    border: 2px solid black;
+    color: white;
+    border: 2px solid white;
 }
