@@ -29,6 +29,11 @@ function checkTime(number) {
         number = "0" + number}  // add zero in front of numbers < 10
     return number;
 }
+
+//TODO: Add the information button
+function info(){
+    alertify.alert('Information','The color is the background is composed from the hexadecimal of the hour following this format "#hhmmss", this project is open source, which mean you can check it on <a  target="_blank" href="https://github.com/Okuuu/TimeColor">GitHub</a>')
+}
 //TODO: Add a copy to clipboard function
 
 
