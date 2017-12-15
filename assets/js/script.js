@@ -67,8 +67,10 @@ function getColor() {
     var minutes = today.getMinutes();
     var seconds = today.getSeconds();
 
+    hours = checkTime(hours);
     minutes = checkTime(minutes);
     seconds = checkTime(seconds);
+
 
     var color = '#' +  hours + minutes + seconds;
     //Color contain a string with the hexadecimal code of the color
