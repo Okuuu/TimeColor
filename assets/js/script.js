@@ -34,7 +34,7 @@ function checkTime(number) {
 //TODO: Add the information button
 function info(){
     alertify.alert('Information',
-        'The color is the background is composed from the hexadecimal of the time ' +
+        'The color in the background is composed from the hexadecimal of the time ' +
         'following this format "#hhmmss", this project is open source, ' +
         'which mean you can check it on ' +
         '<a  target="_blank" href="https://github.com/Okuuu/TimeColor">GitHub</a>')
