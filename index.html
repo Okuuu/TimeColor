@@ -18,8 +18,11 @@
 
     <body onload="startTime()" id="test">
     <div id="storage" style="position: fixed"></div>
-        <div id="infoDiv">
-            <i class="material-icons" onclick="info()" id="info">info_outline</i>
+        <div id="infoDiv" onclick="info()">
+            <i class="material-icons" id="info">info_outline</i> Information
+        </div>
+        <div id="colorChangeDiv" onclick="changeColorMode()">
+            <i class="material-icons" id="colorChange">color_lens</i> Switch Mode
         </div>
         <div class="container">
             <div id="time">

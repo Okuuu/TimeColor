@@ -1,12 +1,19 @@
-//Clock function
 const storage = document.getElementById('storage');
+var mode = 'rgb';
 
+//Clock function
 function startTime() {
 
     var hoursDiv = document.getElementById('hours');
     var minutesDiv = document.getElementById('minutes');
     var secondsDiv = document.getElementById('seconds');
-    var obj = getColor();
+
+    if(mode == 'rgb'){
+        var obj = getColorRGB();
+    }
+    else if(mode == 'hexadecimal'){
+        var obj = getColorHexadecimal();
+    }
 
     //Console log section
     console.log("Color : " + obj.color);
@@ -25,25 +32,29 @@ function startTime() {
 
     document.getElementById('test').style.background = obj.color;
 }
+
 function checkTime(number) {
     if (number < 10){
         number = "0" + number}  // add zero in front of numbers < 10
     return number;
 }
 
-//TODO: Add the information button
 function info(){
     alertify.alert('Information',
         'The color in the background is composed from the hexadecimal of the time ' +
-        'following this format "#hhmmss", this project is open source, ' +
+        '(or of the rgba of the time) following this format "#hhmmss" (or "rgba(hh,mm,ss,1.0)", this project is open source, ' +
         'which mean you can check it on ' +
         '<a  target="_blank" href="https://github.com/Okuuu/TimeColor">GitHub</a>')
 }
-//TODO: Add a copy to clipboard function
 
 function copy () {
     var div = document.createElement("div");
-    var obj = getColor();
+    if(mode == 'hexadecimal'){
+        var obj = getColorHexadecimal();
+    }
+    else if(mode == 'rgb'){
+        var obj = getColorRGB();
+    }
 
     div.innerHTML= obj.color;
     storage.appendChild(div);
@@ -61,7 +72,9 @@ function copy () {
     }
 }
 
-function getColor() {
+function getColorHexadecimal() {
+    //This function return the date and the color in rgba
+
     var today = new Date();
     var hours = today.getHours();
     var minutes = today.getMinutes();
@@ -70,7 +83,6 @@ function getColor() {
     hours = checkTime(hours);
     minutes = checkTime(minutes);
     seconds = checkTime(seconds);
-
 
     var color = '#' +  hours + minutes + seconds;
     //Color contain a string with the hexadecimal code of the color
@@ -84,3 +96,37 @@ function getColor() {
     }
 }
 
+function getColorRGB(){
+    //This function return the date and the color in rgba
+    var today = new Date();
+    var hours = today.getHours();
+    var minutes = today.getMinutes();
+    var seconds = today.getSeconds();
+
+    hours = checkTime(hours);
+    minutes = checkTime(minutes);
+    seconds = checkTime(seconds);
+
+    var color = 'rgba(' + hours + ',' + minutes + ',' + seconds + ',1.0)';
+    //Color contain a string with the rgba code of the color
+
+    return {
+        color: color,
+        hours : ''+hours,
+        minutes : ''+minutes,
+        seconds : ''+seconds
+    }
+}
+
+function changeColorMode() {
+    console.log('oui');
+    if (mode == 'rgb'){
+        mode = 'hexadecimal';
+        alertify.warning('Changed to Hexadecimal')
+    }
+    else if(mode == 'hexadecimal'){
+        mode = 'rgb';
+        alertify.warning('Changed to RGBA')
+
+    }
+}
