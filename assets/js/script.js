@@ -16,10 +16,10 @@ function startTime() {
     }
 
     //Console log section
-    console.log("Color : " + obj.color);
-    console.log("Hours : " + obj.hours);
-    console.log("Minutes : " + obj.minutes);
-    console.log("Seconds : " + obj.seconds);
+    //console.log("Color : " + obj.color);
+    //console.log("Hours : " + obj.hours);
+    //console.log("Minutes : " + obj.minutes);
+    //console.log("Seconds : " + obj.seconds);
 
     var hours = ""+obj.hours;
 
@@ -119,7 +119,6 @@ function getColorRGB(){
 }
 
 function changeColorMode() {
-    console.log('oui');
     if (mode == 'rgb'){
         mode = 'hexadecimal';
         alertify.warning('Changed to Hexadecimal')
